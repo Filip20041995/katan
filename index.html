@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Katan Randomizer</title>
-    <style>
-/* Example media queries to apply the styles based on screen size */
-@media screen and (max-width: 1200px) {
-  .wholeDiv{
-transform: scale(0.7); /* Adjust the scale factor as needed */
-    transform-origin: center center;
-    border: 15px solid rgb(255, 157, 0); /* Just for visualization */
-    outline: 3px solid black;
-}
-}
-.wholeDiv{
-      border: 15px solid rgb(255, 157, 0); /* Just for visualization */
-}
-      .containerRow1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Katan Randomizer</title>
+  <style>
+    /* Example media queries to apply the styles based on screen size */
+    @media screen and (max-width: 1200px) {
+      .wholeDiv {
+        transform: scale(0.7);
+        /* Adjust the scale factor as needed */
+        transform-origin: center center;
+        border: 15px solid rgb(255, 157, 0);
+        /* Just for visualization */
+        outline: 3px solid black;
       }
+    }
 
-      .containerRow2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .wholeDiv {
+      border: 15px solid rgb(255, 157, 0);
+      /* Just for visualization */
+    }
+
+
+    .containerRow0 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 60px;
+    }
+
+    .containerRow1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .containerRow2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       top: -60px;
-      }
+    }
 
-      .containerRow3 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .containerRow3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       top: -120px;
-      }
+    }
 
-      .containerRow4 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .containerRow4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       top: -180px;
-      }
+    }
 
-      .containerRow5 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .containerRow5 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       top: -240px;
-      }
+    }
 
-      .box {
-       padding: 5px; 
-      }
+    .containerRow6 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -300px;
+    }
+
+    .box {
+      padding: 5px;
+    }
+
+
+    .portBox {
+      padding: 5px;
+    }
 
     .container {
       position: relative;
@@ -75,7 +102,7 @@ transform: scale(0.7); /* Adjust the scale factor as needed */
       top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width:90px;
+      width: 90px;
       height: 90px;
       background-color: #ffffff;
       border-radius: 50%;
@@ -83,127 +110,335 @@ transform: scale(0.7); /* Adjust the scale factor as needed */
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #000000; 
+      color: #000000;
       font-size: 55px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
     }
 
     .titleBox {
-        padding: 1px; 
-       margin: 1px; 
-       display: flex;
-  flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-family: 'YourFontName';
-        color: #e8d617;
-        font-size: 50px;
-  /* Adding a black border around the text */
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+      padding: 1px;
+      margin: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'YourFontName';
+      color: #e8d617;
+      font-size: 50px;
+      /* Adding a black border around the text */
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
     @font-face {
-  font-family: 'YourFontName';
-  src: url('public/fonts/Garamond-MT-Bold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-    .buttonsBox {
-        padding: 10px;
-        padding-bottom: 20px; 
-       margin: 10px; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      font-family: 'YourFontName';
+      src: url('public/fonts/Garamond-MT-Bold.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
 
-      .generateButton {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:27px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.generateButton1 {
-	background-color:#c74444;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:27px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.generateButton2 {
-	background-color:#bed83b;
-	border-radius:28px;
-	border:1px solid #ab5818;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:27px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.generateButton:hover {
-	background-color:#5cbf2a;
-}
-.generateButton:active {
-	position:relative;
-	top:1px;
-}
-h1 {
-margin: 3px;
-padding: 3px;
-}
+    .buttonsBox {
+      padding: 10px;
+      padding-bottom: 20px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-h2{
-margin: 3px;
-padding: 3px;
-}
-  
-    </style>
-<script>
-  window.onload = function() {
-    setBoard()
-  };
-</script>
+    .generateButton {
+      background-color: #44c767;
+      border-radius: 28px;
+      border: 1px solid #18ab29;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 27px;
+      padding: 16px 31px;
+      margin-left: 15px;
+      margin-right: 15px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #2f6627;
+    }
 
-  </head>
+    .generateButton1 {
+      background-color: #c74444;
+      border-radius: 28px;
+      border: 1px solid #18ab29;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 27px;
+      padding: 16px 31px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #2f6627;
+    }
 
-  <body>
-    <div class="wholeDiv" id="wholeDiv">
+    .generateButton2 {
+      background-color: #bed83b;
+      border-radius: 28px;
+      border: 1px solid #ab5818;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 27px;
+      padding: 16px 31px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #2f6627;
+    }
+
+    .generateButton:hover {
+      background-color: #5cbf2a;
+    }
+
+    .generateButton:active {
+      position: relative;
+      top: 1px;
+    }
+
+    h1 {
+      margin: 3px;
+      padding: 3px;
+    }
+
+    h2 {
+      margin: 3px;
+      padding: 3px;
+    }
+
+    .portRow1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 110px;
+    }
+
+    .portRow7 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -350px;
+    }
+
+    .port-overlay {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      border: 4px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      font-size: 55px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+
+    .portContainer {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      display: block;
+    }
+
+    .portBox {
+      padding: 5px;
+    }
+
+    .fakeImage {
+      width: 250px;
+      height: 250px;
+      display: block;
+    }
+
+    .custom-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      border: 4px solid #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      font-size: 55px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      z-index: 4;
+      /* Higher z-index for both canvases */
+    }
+
+    #myCanvas1,
+    #myCanvas2,
+    #myCanvas3,
+    #myCanvas4,
+    #myCanvas5,
+    #myCanvas6,
+    #myCanvas7,
+    #myCanvas8,
+    #myCanvas9,
+    #myCanvas10,
+    #myCanvas11,
+    #myCanvas12,
+    #myCanvas13,
+    #myCanvas14,
+    #myCanvas15,
+    #myCanvas16,
+    #myCanvas17,
+    #myCanvas18    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      /* Higher z-index for both canvases */
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      setBoard()
+    };
+  </script>
+
+
+</head>
+
+<body>
+  <div class="wholeDiv" id="wholeDiv">
     <div class="titleBox" id="titleBox">
       <h1>KATAN</h1>
       <h2>RANDOMIZER</h2>
     </div>
     <div class="buttonsBox" id="buttonsBox">
-      <button class="generateButton" id="generateButton" onclick="setBoard()">Generate</button>
+      <button class="generateButton" id="generateBoardButton" onclick="setBoard()">Generate</button>
+      <button class="generateButton" id="TogglePortsButton" onclick="togglePortsVisibility()">Toggle Ports</button>
     </div>
 
     <script src="generateBoard.js">
-      document.getElementById("generateButton").addEventListener("click", setBoard());
-
+      document.getElementById("generateBoardButton").addEventListener("click", setBoard());
+      document.getElementById("TogglePortsButton").addEventListener("click", setBoard());
     </script>
+
+    <div class="containerRow0" id="containerRow0">
+      <div class="portBox" id="portBox0">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox1">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas1" width="250" height="250"></canvas>
+          <script>
+            var c1 = document.getElementById("myCanvas1");
+            var ctx1 = c1.getContext("2d");
+            ctx1.moveTo(125, 250);
+            ctx1.lineTo(125, 125);
+            ctx1.lineWidth = 10; // Set line thickness
+            ctx1.strokeStyle = '#755202'; // Set line color
+            ctx1.stroke();
+          </script>
+          <canvas id="myCanvas2" width="250" height="250"></canvas>
+          <script>
+            var c2 = document.getElementById("myCanvas2");
+            var ctx2 = c2.getContext("2d");
+            ctx2.moveTo(360, 250);
+            ctx2.lineTo(125, 125);
+            ctx2.lineWidth = 10; // Set line thickness
+            ctx2.strokeStyle = '#755202'; // Set line color
+            ctx2.stroke();
+          </script>
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox2">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox3">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas3" width="250" height="250"></canvas>
+          <script>
+            var c3 = document.getElementById("myCanvas3");
+            var ctx3 = c3.getContext("2d");
+            ctx3.moveTo(125, 250);
+            ctx3.lineTo(125, 125);
+            ctx3.lineWidth = 10; // Set line thickness
+            ctx3.strokeStyle = '#755202'; // Set line color
+            ctx3.stroke();
+          </script>
+          <canvas id="myCanvas4" width="250" height="250"></canvas>
+          <script>
+            var c4 = document.getElementById("myCanvas4");
+            var ctx4 = c4.getContext("2d");
+            ctx4.moveTo(-110, 250);
+            ctx4.lineTo(125, 125);
+            ctx4.lineWidth = 10; // Set line thickness
+            ctx4.strokeStyle = '#755202'; // Set line color
+            ctx4.stroke();
+          </script>
+        </div>
+      </div>
+
+    </div>
 
     <div class="containerRow1">
 
+      <div class="portBox" id="portBox4">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas5" width="250" height="250"></canvas>
+          <script>
+            var c5 = document.getElementById("myCanvas5");
+            var ctx5 = c5.getContext("2d");
+            ctx5.moveTo(125, 250);
+            ctx5.lineTo(125, 125);
+            ctx5.lineWidth = 10;
+            ctx5.strokeStyle = '#755202';
+            ctx5.stroke();
+          </script>
+
+          <canvas id="myCanvas6" width="250" height="250"></canvas>
+          <script>
+            var c6 = document.getElementById("myCanvas6");
+            var ctx6 = c6.getContext("2d");
+            ctx6.moveTo(360, 250);
+            ctx6.lineTo(125, 125);
+            ctx6.lineWidth = 10;
+            ctx6.strokeStyle = '#755202';
+            ctx6.stroke();
+          </script>
+
+        </div>
+      </div>
+
       <div class="box" id="box1">
         <div class="container">
-          <img class="image"  alt="Description of the image">
+          <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
         </div>
       </div>
@@ -216,14 +451,27 @@ padding: 3px;
       </div>
 
       <div class="box" id="box3">
-          <div class="container">
+        <div class="container">
           <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox5">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
         </div>
       </div>
     </div>
 
     <div class="containerRow2">
+
+      <div class="portBox" id="portBox6">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
       <div class="box" id="box4">
         <div class="container">
           <img class="image" alt="Description of the image">
@@ -234,21 +482,81 @@ padding: 3px;
         <div class="container">
           <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
-        </div>      
+        </div>
       </div>
       <div class="box" id="box6">
         <div class="container">
           <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
-        </div>      </div>
+        </div>
+      </div>
       <div class="box" id="box7">
         <div class="container">
           <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
-        </div>      </div>
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox7">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas7" width="250" height="250"></canvas>
+          <script>
+            var c7 = document.getElementById("myCanvas7");
+            var ctx7 = c7.getContext("2d");
+            ctx7.moveTo(-550, -200);
+            ctx7.lineTo(125, 125);
+            ctx7.lineWidth = 10;
+            ctx7.strokeStyle = '#755202';
+            ctx7.stroke();
+          </script>
+
+          <canvas id="myCanvas8" width="250" height="250"></canvas>
+          <script>
+            var c8 = document.getElementById("myCanvas8");
+            var ctx8 = c8.getContext("2d");
+            ctx8.moveTo(-110, 250);
+            ctx8.lineTo(125, 125);
+            ctx8.lineWidth = 10;
+            ctx8.strokeStyle = '#755202';
+            ctx8.stroke();
+          </script>
+
+        </div>
+      </div>
     </div>
 
     <div class="containerRow3">
+
+      <div class="portBox" id="portBox8">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas9" width="250" height="250"></canvas>
+          <script>
+            var c9 = document.getElementById("myCanvas9");
+            var ctx9 = c9.getContext("2d");
+            ctx9.moveTo(350, 10);
+            ctx9.lineTo(125, 125);
+            ctx9.lineWidth = 10;
+            ctx9.strokeStyle = '#755202';
+            ctx9.stroke();
+          </script>
+
+          <canvas id="myCanvas10" width="250" height="250"></canvas>
+          <script>
+            var c10 = document.getElementById("myCanvas10");
+            var ctx10 = c10.getContext("2d");
+            ctx10.moveTo(370, 250);
+            ctx10.lineTo(125, 125);
+            ctx10.lineWidth = 10;
+            ctx10.strokeStyle = '#755202';
+            ctx10.stroke();
+          </script>
+        </div>
+      </div>
+
       <div class="box" id="box8">
         <div class="container">
           <img class="image" alt="Description of the image">
@@ -279,9 +587,22 @@ padding: 3px;
           <p class="text-overlay"></p>
         </div>
       </div>
+
+      <div class="portBox" id="portBox9">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
     </div>
 
     <div class="containerRow4">
+
+      <div class="portBox" id="portBox10">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
       <div class="box" id="box13">
         <div class="container">
           <img class="image" alt="Description of the image">
@@ -290,7 +611,7 @@ padding: 3px;
       </div>
       <div class="box" id="box14">
         <div class="container">
-          <img class="image"  alt="Description of the image">
+          <img class="image" alt="Description of the image">
           <p class="text-overlay"></p>
         </div>
       </div>
@@ -306,9 +627,64 @@ padding: 3px;
           <p class="text-overlay"></p>
         </div>
       </div>
+
+      <div class="portBox" id="portBox11">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas11" width="250" height="250"></canvas>
+          <script>
+            var c11 = document.getElementById("myCanvas11");
+            var ctx11 = c11.getContext("2d");
+            ctx11.moveTo(-550, -200);
+            ctx11.lineTo(125, 125);
+            ctx11.lineWidth = 10;
+            ctx11.strokeStyle = '#755202';
+            ctx11.stroke();
+          </script>
+
+          <canvas id="myCanvas12" width="250" height="250"></canvas>
+          <script>
+            var c12 = document.getElementById("myCanvas12");
+            var ctx12 = c12.getContext("2d");
+            ctx12.moveTo(-110, 250);
+            ctx12.lineTo(125, 125);
+            ctx12.lineWidth = 10;
+            ctx12.strokeStyle = '#755202';
+            ctx12.stroke();
+          </script>
+        </div>
+      </div>
     </div>
 
     <div class="containerRow5">
+      <div class="portBox" id="portBox12">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas13" width="250" height="250"></canvas>
+          <script>
+            var c13 = document.getElementById("myCanvas13");
+            var ctx13 = c13.getContext("2d");
+            ctx13.moveTo(120, -1000);
+        ctx13.lineTo(125, 125);
+            ctx13.lineWidth = 10;
+            ctx13.strokeStyle = '#755202';
+            ctx13.stroke();
+          </script>
+          <canvas id="myCanvas14" width="250" height="250"></canvas>
+          <script>
+            var c14 = document.getElementById("myCanvas14");
+            var ctx14 = c14.getContext("2d");
+            ctx14.moveTo(350, 10);
+            ctx14.lineTo(125, 125);
+            ctx14.lineWidth = 10;
+            ctx14.strokeStyle = '#755202';
+            ctx14.stroke();
+          </script>
+        </div>
+      </div>
+
       <div class="box" id="box17">
         <div class="container">
           <img class="image" alt="Description of the image">
@@ -327,7 +703,85 @@ padding: 3px;
           <p class="text-overlay"></p>
         </div>
       </div>
+
+      <div class="portBox" id="portBox13">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
     </div>
+
+    <div class="containerRow6">
+      <div class="portBox" id="portBox14">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox15">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div"></div>
+          <canvas id="myCanvas15" width="250" height="250"></canvas>
+          <script>
+            var c15 = document.getElementById("myCanvas15");
+            var ctx15 = c15.getContext("2d");
+            ctx15.moveTo(120, -1000);
+        ctx15.lineTo(125, 125);
+            ctx15.lineWidth = 10;
+            ctx15.strokeStyle = '#755202';
+            ctx15.stroke();
+          </script>
+          <canvas id="myCanvas16" width="250" height="250"></canvas>
+          <script>
+            var c16 = document.getElementById("myCanvas16");
+            var ctx16 = c16.getContext("2d");
+            ctx16.moveTo(350, 10);
+            ctx16.lineTo(125, 125);
+            ctx16.lineWidth = 10;
+            ctx16.strokeStyle = '#755202';
+            ctx16.stroke();
+          </script>
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox16">
+        <div class="container">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+        </div>
+      </div>
+
+      <div class="portBox" id="portBox17">
+        <div class="portContainer">
+          <img class="fakeImage" src="images/water.png" alt="Description of the image">
+          <div class="custom-div" style="background-image: url('images/water.png');  background-size: cover; /* Adjust the background size to cover the entire div */
+          background-position: center center; "></div>
+          <canvas id="myCanvas17" width="250" height="250"></canvas>
+          <script>
+            var c17 = document.getElementById("myCanvas17");
+            var ctx17 = c17.getContext("2d");
+            ctx17.moveTo(120, -1000);
+        ctx17.lineTo(125, 125);
+            ctx17.lineWidth = 10;
+            ctx17.strokeStyle = '#755202';
+            ctx17.stroke();
+          </script>
+          <canvas id="myCanvas18" width="250" height="250"></canvas>
+          <script>
+            var c18 = document.getElementById("myCanvas18");
+            var ctx18 = c18.getContext("2d");
+            ctx18.moveTo(-550, -200);
+            ctx18.lineTo(125, 125);
+            ctx18.lineWidth = 10;
+            ctx18.strokeStyle = '#755202';
+            ctx18.stroke();
+          </script>
+        </div>
+      </div>
+    </div>
+
   </div>
-  </body>
+</body>
+
 </html>

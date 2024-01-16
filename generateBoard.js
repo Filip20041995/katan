@@ -125,7 +125,6 @@ async function setTiles() {
         childImages[0].src = `images/${resurceTilesValues[i].type}.png`
         tileValuesArray.push({ position: `box${i + 1}`, type: resurceTilesValues[i].type, forbidenPositions: forbidenPositions[i] });
     }
-    console.log(tileValuesArray)
     return tileValuesArray
 }
 
@@ -213,6 +212,13 @@ async function setBoard() {
         throw error;
     }
 }
+
+function togglePortsVisibility() {
+    for (let i = 0; i < 18; i++) {
+      var elementToHide1 = document.getElementById(`portBox${i}`);
+    elementToHide1.classList.toggle("hidden");
+    }
+    }
 
 
 class resurceTile {
