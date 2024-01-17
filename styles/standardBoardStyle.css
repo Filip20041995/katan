@@ -19,6 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 6px;
     }
 
     .containerRow2 {
@@ -27,6 +28,7 @@
       justify-content: center;
       position: relative;
       top: -60px;
+      padding: 6px;
     }
 
     .containerRow3 {
@@ -35,6 +37,7 @@
       justify-content: center;
       position: relative;
       top: -120px;
+      padding: 6px;
     }
 
     .containerRow4 {
@@ -43,6 +46,7 @@
       justify-content: center;
       position: relative;
       top: -180px;
+      padding: 6px;
     }
 
     .containerRow5 {
@@ -51,10 +55,11 @@
       justify-content: center;
       position: relative;
       top: -240px;
+      padding: 6px;
     }
 
     .box {
-      padding: 5px;
+      padding: 6px;
     }
 
     .container {
