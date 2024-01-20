@@ -285,6 +285,7 @@ async function setExpansion2and12Values(freeTilesAfterRed) {
         tileBox = await document.getElementById(randomPosition)
         childParagraphf = await tileBox.querySelectorAll("p");
         childParagraphf[0].textContent = otherValues[i]
+        childParagraphf[0].style.color = "#000000";
         //removing forbiden tiles
         tile = await freeTilesAfterRed.find(item => item.position == randomPosition);
         tileforbidenPositions = tile.forbiddenExpansionPositions;
