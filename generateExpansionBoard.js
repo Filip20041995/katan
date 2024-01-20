@@ -1,43 +1,43 @@
 /*Forbiden tiles*/
-let positionsForExpansionBox1 = ['expansionBox2', 'expansionBox4', 'expansionBox5']
-let positionsForExpansionBox2 = ['expansionBox1', 'expansionBox3', 'expansionBox5', 'expansionBox6']
-let positionsForExpansionBox3 = ['expansionBox2', 'expansionBox6', 'expansionBox7']
+let positionsForExpansionBox1 = {position:'expansionBox1', unavailabelPositions:['expansionBox2', 'expansionBox4', 'expansionBox5']}
+let positionsForExpansionBox2 = {position:'expansionBox2', unavailabelPositions:['expansionBox1', 'expansionBox3', 'expansionBox5', 'expansionBox6']}
+let positionsForExpansionBox3 = {position:'expansionBox3', unavailabelPositions:['expansionBox2', 'expansionBox6', 'expansionBox7']}
 
-let positionsForExpansionBox4 = ['expansionBox1','expansionBox5','expansionBox8','expansionBox9']
-let positionsForExpansionBox5 = ['expansionBox1','expansionBox2','expansionBox4','expansionBox6','expansionBox9','expansionBox10']
-let positionsForExpansionBox6 = ['expansionBox2','expansionBox3','expansionBox5','expansionBox7','expansionBox10','expansionBox11']
-let positionsForExpansionBox7 = ['expansionBox3','expansionBox6','expansionBox11','expansionBox12']
+let positionsForExpansionBox4 = {position:'expansionBox4', unavailabelPositions:['expansionBox1', 'expansionBox5', 'expansionBox8', 'expansionBox9']}
+let positionsForExpansionBox5 = {position:'expansionBox5', unavailabelPositions:['expansionBox1', 'expansionBox2', 'expansionBox4', 'expansionBox6', 'expansionBox9', 'expansionBox10']}
+let positionsForExpansionBox6 = {position:'expansionBox6', unavailabelPositions:['expansionBox2', 'expansionBox3', 'expansionBox5', 'expansionBox7', 'expansionBox10', 'expansionBox11']}
+let positionsForExpansionBox7 = {position:'expansionBox7', unavailabelPositions:['expansionBox3', 'expansionBox6', 'expansionBox11', 'expansionBox12']}
 
-let positionsForExpansionBox8 = ['expansionBox4','expansionBox9','expansionBox13','expansionBox14']
-let positionsForExpansionBox9 = ['expansionBox4','expansionBox5','expansionBox8','expansionBox10','expansionBox14','expansionBox15']
-let positionsForExpansionBox10 = ['expansionBox5','expansionBox6','expansionBox9','expansionBox11','expansionBox15','expansionBox16']
-let positionsForExpansionBox11 = ['expansionBox6','expansionBox7','expansionBox10','expansionBox12','expansionBox16','expansionBox17']
-let positionsForExpansionBox12 = ['expansionBox7','expansionBox11','expansionBox17','expansionBox18']
+let positionsForExpansionBox8 = {position:'expansionBox8', unavailabelPositions:['expansionBox4', 'expansionBox9', 'expansionBox13', 'expansionBox14']}
+let positionsForExpansionBox9 = {position:'expansionBox9', unavailabelPositions:['expansionBox4', 'expansionBox5', 'expansionBox8', 'expansionBox10', 'expansionBox14', 'expansionBox15']}
+let positionsForExpansionBox10 = {position:'expansionBox10', unavailabelPositions:['expansionBox5', 'expansionBox6', 'expansionBox9', 'expansionBox11', 'expansionBox15', 'expansionBox16']}
+let positionsForExpansionBox11 = {position:'expansionBox11', unavailabelPositions:['expansionBox6', 'expansionBox7', 'expansionBox10', 'expansionBox12', 'expansionBox16', 'expansionBox17']}
+let positionsForExpansionBox12 = {position:'expansionBox12', unavailabelPositions:['expansionBox7', 'expansionBox11', 'expansionBox17', 'expansionBox18']}
 
-let positionsForExpansionBox13 = ['expansionBox8','expansionBox14','expansionBox19']
-let positionsForExpansionBox14 = ['expansionBox8','expansionBox9','expansionBox13','expansionBox15','expansionBox19','expansionBox20']
-let positionsForExpansionBox15 = ['expansionBox9','expansionBox10','expansionBox14','expansionBox16','expansionBox20','expansionBox21']
-let positionsForExpansionBox16 = ['expansionBox10','expansionBox11','expansionBox15','expansionBox17','expansionBox21','expansionBox22']
-let positionsForExpansionBox17 = ['expansionBox11','expansionBox12','expansionBox16','expansionBox18','expansionBox22','expansionBox23']
-let positionsForExpansionBox18 = ['expansionBox12','expansionBox17','expansionBox23']
+let positionsForExpansionBox13 = {position:'expansionBox13', unavailabelPositions:['expansionBox8', 'expansionBox14', 'expansionBox19']}
+let positionsForExpansionBox14 = {position:'expansionBox14', unavailabelPositions:['expansionBox8', 'expansionBox9', 'expansionBox13', 'expansionBox15', 'expansionBox19', 'expansionBox20']}
+let positionsForExpansionBox15 = {position:'expansionBox15', unavailabelPositions:['expansionBox9', 'expansionBox10', 'expansionBox14', 'expansionBox16', 'expansionBox20', 'expansionBox21']}
+let positionsForExpansionBox16 = {position:'expansionBox16', unavailabelPositions:['expansionBox10', 'expansionBox11', 'expansionBox15', 'expansionBox17', 'expansionBox21', 'expansionBox22']}
+let positionsForExpansionBox17 = {position:'expansionBox17', unavailabelPositions: ['expansionBox11', 'expansionBox12', 'expansionBox16', 'expansionBox18', 'expansionBox22', 'expansionBox23']}
+let positionsForExpansionBox18 = {position:'expansionBox18', unavailabelPositions:['expansionBox12', 'expansionBox17', 'expansionBox23']}
 
-let positionsForExpansionBox19 = ['expansionBox13','expansionBox14','expansionBox20','expansionBox24']
-let positionsForExpansionBox20 = ['expansionBox14','expansionBox15','expansionBox19','expansionBox21','expansionBox24','expansionBox25']
-let positionsForExpansionBox21 = ['expansionBox15','expansionBox16','expansionBox20','expansionBox22','expansionBox25','expansionBox26']
-let positionsForExpansionBox22 = ['expansionBox16','expansionBox17','expansionBox21','expansionBox23','expansionBox26','expansionBox27']
-let positionsForExpansionBox23 = ['expansionBox17','expansionBox18','expansionBox22','expansionBox27']
+let positionsForExpansionBox19 = {position:'expansionBox19', unavailabelPositions:['expansionBox13', 'expansionBox14', 'expansionBox20', 'expansionBox24']}
+let positionsForExpansionBox20 = {position:'expansionBox20', unavailabelPositions:['expansionBox14', 'expansionBox15', 'expansionBox19', 'expansionBox21', 'expansionBox24', 'expansionBox25']}
+let positionsForExpansionBox21 = {position:'expansionBox21', unavailabelPositions:['expansionBox15', 'expansionBox16', 'expansionBox20', 'expansionBox22', 'expansionBox25', 'expansionBox26']}
+let positionsForExpansionBox22 = {position:'expansionBox22', unavailabelPositions:['expansionBox16', 'expansionBox17', 'expansionBox21', 'expansionBox23', 'expansionBox26', 'expansionBox27']}
+let positionsForExpansionBox23 = {position:'expansionBox23', unavailabelPositions:['expansionBox17', 'expansionBox18', 'expansionBox22', 'expansionBox27']}
 
-let positionsForExpansionBox24 = ['expansionBox19','expansionBox20']
-let positionsForExpansionBox25 = ['expansionBox20','expansionBox21','expansionBox24','expansionBox26','expansionBox28','expansionBox29']
-let positionsForExpansionBox26 = ['expansionBox21','expansionBox22','expansionBox25','expansionBox27','expansionBox29','expansionBo30']
-let positionsForExpansionBox27 = ['expansionBox22','expansionBox23','expansionBox26','expansionBox30']
+let positionsForExpansionBox24 = {position:'expansionBox24', unavailabelPositions:['expansionBox19', 'expansionBox20','expansionBox25','expansionBox28']}
+let positionsForExpansionBox25 = {position:'expansionBox25', unavailabelPositions:['expansionBox20', 'expansionBox21', 'expansionBox24', 'expansionBox26', 'expansionBox28', 'expansionBox29']}
+let positionsForExpansionBox26 = {position:'expansionBox26', unavailabelPositions:['expansionBox21', 'expansionBox22', 'expansionBox25', 'expansionBox27', 'expansionBox29', 'expansionBo30']}
+let positionsForExpansionBox27 = {position:'expansionBox27', unavailabelPositions:['expansionBox22', 'expansionBox23', 'expansionBox26', 'expansionBox30']}
 
-let positionsForExpansionBox28 = ['expansionBox24','expansionBox25','expansionBox29']
-let positionsForExpansionBox29 = ['expansionBox25','expansionBox26','expansionBox28','expansionBox30']
-let positionsForExpansionBox30 = ['expansionBox26','expansionBox27','expansionBox29']
+let positionsForExpansionBox28 = {position:'expansionBox28', unavailabelPositions:['expansionBox24', 'expansionBox25', 'expansionBox29']}
+let positionsForExpansionBox29 = {position:'expansionBox29', unavailabelPositions:['expansionBox25', 'expansionBox26', 'expansionBox28', 'expansionBox30']}
+let positionsForExpansionBox30 = {position:'expansionBox30', unavailabelPositions:['expansionBox26', 'expansionBox27', 'expansionBox29']}
 
 
-let forbiddenExpansionPositions  = [
+let forbiddenExpansionPositions = [
     positionsForExpansionBox1, positionsForExpansionBox2, positionsForExpansionBox3, positionsForExpansionBox4,
     positionsForExpansionBox5, positionsForExpansionBox6, positionsForExpansionBox7, positionsForExpansionBox8,
     positionsForExpansionBox9, positionsForExpansionBox10, positionsForExpansionBox11, positionsForExpansionBox12,
@@ -53,10 +53,10 @@ function generateExpansionResourceValuesArray() {
     for (let i = 3; i < 12; i++) {
         valuesArray.push(i);
         valuesArray.push(i);
-      valuesArray.push(i);
+        valuesArray.push(i);
     }
-    valuesArray.push(12,12);
-  valuesArray.push(2,2);
+    valuesArray.push(12, 12);
+    valuesArray.push(2, 2);
     valuesArray = valuesArray.filter(number => number !== 7);
     return valuesArray
 }
@@ -83,7 +83,7 @@ function generateExpansionResourceTypesArray() {
     for (let i = 0; i <= 5; i++) {
         typesArray.push("field");
     }
-    typesArray.push("desert","desert");
+    typesArray.push("desert", "desert");
     return typesArray
 }
 
@@ -103,28 +103,19 @@ function generateRandomResourceType(typesArray) {
 
 function randomizeExpansionResourceTile() {
     let tileArray = []
-    const valuesArray = generateExpansionResourceValuesArray()
     const typesArray = generateExpansionResourceTypesArray()
 
     for (let i = 0; i < 30; i++) {
         let titleType = generateRandomResourceType(typesArray)
-
-        if (titleType != 'desert') {
-            let tileValue = generateRandomResourceValue(valuesArray)
-            let resourceTile = new resurceTile(titleType, tileValue);
-            tileArray.push(resourceTile);
-        }
-        else if (titleType == 'desert') {
             let resourceTile = new resurceTile(titleType, 0);
             tileArray.push(resourceTile);
-        }
     }
     return tileArray
 }
 
 async function ExpansionRestart() {
     let tileValuesArray = []
-    for (let i = 0; i <30; i++) {
+    for (let i = 0; i < 30; i++) {
         //Generate tile with position
         const tileBox = document.getElementById(`expansionBox${i + 1}`)
         const childImages = tileBox.querySelectorAll("img");
@@ -137,17 +128,79 @@ async function ExpansionRestart() {
     return tileValuesArray
 }
 
-async function setExpanionsTiles() {
-    const resurceTilesValues = randomizeExpansionResourceTile()
-    let tileValuesArray = []
+async function getAllExpansionTileBoxPositions() {
+    let allExpansionTileBoxPositions = []
     for (let i = 0; i < 30; i++) {
-        //Generate tile with position
-        const tileBox = document.getElementById(`expansionBox${i + 1}`)
-        const childImages = tileBox.querySelectorAll("img");
-        childImages[0].src = `images/${resurceTilesValues[i].type}.png`
-        tileValuesArray.push({ position: `expansionBox${i + 1}`, type: resurceTilesValues[i].type, forbiddenExpansionPositions: forbiddenExpansionPositions[i] });
+        allExpansionTileBoxPositions.push(`expansionBox${i + 1}`)
     }
-    return tileValuesArray
+    return allExpansionTileBoxPositions
+}
+
+async function setDesertNotTouching() {
+    let desertTileValuesArray = []
+    let availableExpansionTileBoxPositions = []
+    //get all positiotns
+    let allExpansionTileBoxPositions = await getAllExpansionTileBoxPositions()
+    availableExpansionTileBoxPositions = allExpansionTileBoxPositions
+    let randomIndex = await getRandomInt(1, 30);
+    //Set first desert tile
+    const desertTileBox1 = document.getElementById(`expansionBox${randomIndex}`)
+    const desertImg1 = desertTileBox1.querySelectorAll("img");
+    desertImg1[0].src = `images/desert.png`
+    desertTileValuesArray.push({ position: `expansionBox${randomIndex}`, type: "desert", forbiddenExpansionPositions: forbiddenExpansionPositions[randomIndex - 1].unavailabelPositions });
+    //Remove all unusabel positions
+    let availableDesertBoxPositions = await allExpansionTileBoxPositions.filter((item) => item !== `expansionBox${randomIndex}`);
+    availableDesertBoxPositions = await availableDesertBoxPositions.filter(item => !forbiddenExpansionPositions[randomIndex - 1].unavailabelPositions.includes(item));
+    //Set second desert tile
+    randomIndex = await getRandomInt(0, availableDesertBoxPositions.length - 1);
+    const desertTileBox2 = document.getElementById(availableDesertBoxPositions[randomIndex])
+    const desertImg2 = desertTileBox2.querySelectorAll("img");
+    desertImg2[0].src = `images/desert.png`
+    let desert2UnavailablePosititons = forbiddenExpansionPositions.find(obj => obj.position === availableDesertBoxPositions[randomIndex]);
+    desertTileValuesArray.push({ position: availableDesertBoxPositions[randomIndex], type: "desert", forbiddenExpansionPositions: desert2UnavailablePosititons.unavailabelPositions});
+    //set up array of all positions without the desert tiles
+    availableExpansionTileBoxPositions= availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
+    availableExpansionTileBoxPositions= availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[1].position);
+    return {
+        desertTileValuesArray:desertTileValuesArray,
+      availableExpansionTileBoxPositions:availableExpansionTileBoxPositions
+    }
+}
+
+async function setExpanionsTiles(expansionBoardOptions) {
+    if(expansionBoardOptions.desertsNotTouching === true){
+        let afterDesertTilesObject = await setDesertNotTouching()
+        let tileValuesArray = []
+        let resurceTilesValues = randomizeExpansionResourceTile()
+        resurceTilesValues = resurceTilesValues.filter(item => item.type !== "desert");
+        for (let i = 0; i < 28; i++) {
+            //Generate tile with position
+            const tileBox = document.getElementById(afterDesertTilesObject.availableExpansionTileBoxPositions[i])
+            const childImages = tileBox.querySelectorAll("img");
+            childImages[0].src = `images/${resurceTilesValues[i].type}.png`
+            let unavailabelPositions = forbiddenExpansionPositions.find(obj => obj.position === afterDesertTilesObject.availableExpansionTileBoxPositions[i]);
+            tileValuesArray.push({ position: afterDesertTilesObject.availableExpansionTileBoxPositions[i], type: resurceTilesValues[i].type, forbiddenExpansionPositions: unavailabelPositions.unavailabelPositions });
+        }
+        tileValuesArray.push(afterDesertTilesObject.desertTileValuesArray[0])
+        tileValuesArray.push(afterDesertTilesObject.desertTileValuesArray[1])
+        tileValuesArray.sort((a, b) => {
+            const numericA = parseInt(a.position.match(/\d+/)[0]);
+            const numericB = parseInt(b.position.match(/\d+/)[0]);
+            return numericA - numericB;
+          });
+        return tileValuesArray
+      }else if(expansionBoardOptions.desertsNotTouching === false){
+        const resurceTilesValues = randomizeExpansionResourceTile()
+      let tileValuesArray = []  
+        for (let i = 0; i < 30; i++) {
+            //Generate tile with position
+            const tileBox = document.getElementById(`expansionBox${i + 1}`)
+            const childImages = tileBox.querySelectorAll("img");
+            childImages[0].src = `images/${resurceTilesValues[i].type}.png`
+            tileValuesArray.push({ position: `expansionBox${i + 1}`, type: resurceTilesValues[i].type, forbiddenExpansionPositions: forbiddenExpansionPositions[i].unavailabelPositions });
+        }
+        return tileValuesArray
+      }
 }
 
 function getRandomInt(min, max) {
@@ -156,34 +209,33 @@ function getRandomInt(min, max) {
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+}
 
-async function setExpansionRedTileValues() {
+async function setExpansionRedTileValues(expansionBoardOptions) {
     //Setting all tiles
-   
-    let tileValuesArray = await setExpanionsTiles()
+
+    let tileValuesArray = await setExpanionsTiles(expansionBoardOptions)
     //Remove old desert no-display
     for (let i = 0; i < 30; i++) {
         const oldBox = document.getElementById(`expansionBox${i + 1}`)
-    const oldParaf = oldBox.querySelectorAll("p");
-    oldParaf[0].style.display = "";
+        const oldParaf = oldBox.querySelectorAll("p");
+        oldParaf[0].style.display = "";
     }
-
     //remove dessert fom tile array
     let desertTile = await tileValuesArray.filter(item => item.type == "desert");
 
     for (let i = 0; i < 2; i++) {
-    let desertTilePosition = desertTile[i].position
-    const desert = document.getElementById(desertTilePosition)
-    const desertParaf = desert.querySelectorAll("p");
-    desertParaf[0].style.display = "none";
-     }
+        let desertTilePosition = desertTile[i].position
+        const desert = document.getElementById(desertTilePosition)
+        const desertParaf = desert.querySelectorAll("p");
+        desertParaf[0].style.display = "none";
+    }
     tileValuesArray = await tileValuesArray.filter(item => item.type !== "desert");
-    
+
     let randomPosition;
     let tileBox;
     let childParagraphf;
@@ -192,7 +244,7 @@ async function setExpansionRedTileValues() {
 
     const redValues = [6, 6, 6, 8, 8, 8]
     let redValueTilePositions = []
-    let freeTiles = tileValuesArray
+    let freeTilesAfterRed = tileValuesArray
 
     for (let i = 0; i < 6; i++) {
         //Setting red tile value
@@ -209,17 +261,52 @@ async function setExpansionRedTileValues() {
         tileValuesArray = await tileValuesArray.filter(item => !tileforbidenPositions.includes(item.position));
 
         redValueTilePositions.push(randomPosition)
-    } 
-    freeTiles = await freeTiles.filter(item => !redValueTilePositions.includes(item.position));
-    return freeTiles
+    }
+    freeTilesAfterRed = await freeTilesAfterRed.filter(item => !redValueTilePositions.includes(item.position));
+    return freeTilesAfterRed
 }
 
-async function setOtherExpansionTileValues(freeTiles) {
+async function setExpansion2and12Values(freeTilesAfterRed) {
 
-    let otherValues = [2, 2, 12, 12, 3, 3, 3, 4, 4, 4, 5, 5, 5, 9, 9, 9, 10, 10, 10, 11, 11, 11]
+    let randomPosition;
+    let tileBox;
+    let childParagraphf;
+    let tile;
+    let tileforbidenPositions;
+
+    let otherValues = [2, 2, 12, 12]
+    let smallValueTilePositions = []
+    let freeTilesAfterSmall = freeTilesAfterRed
+
+    for (let i = 0; i < 4; i++) {
+        //Setting red tile value
+        let randomIndex = await getRandomInt(0, freeTilesAfterRed.length - 1);
+        randomPosition = await freeTilesAfterRed[randomIndex].position;
+        tileBox = await document.getElementById(randomPosition)
+        childParagraphf = await tileBox.querySelectorAll("p");
+        childParagraphf[0].textContent = otherValues[i]
+        //removing forbiden tiles
+        tile = await freeTilesAfterRed.find(item => item.position == randomPosition);
+        tileforbidenPositions = tile.forbiddenExpansionPositions;
+        tileforbidenPositions.push(randomPosition);
+        freeTilesAfterRed = await freeTilesAfterRed.filter(item => !tileforbidenPositions.includes(item.position));
+
+        smallValueTilePositions.push(randomPosition)
+    }
+    freeTilesAfterSmall = await freeTilesAfterSmall.filter(item => !smallValueTilePositions.includes(item.position));
+    return freeTilesAfterSmall
+}
+
+async function setOtherExpansionTileValues(options, freeTiles) {
+    let otherValues
+    if (options.smallValuesNotTouching === true) {
+        otherValues = [3, 3, 3, 4, 4, 4, 5, 5, 5, 9, 9, 9, 10, 10, 10, 11, 11, 11]
+    } else {
+        otherValues = [2, 2, 12, 12, 3, 3, 3, 4, 4, 4, 5, 5, 5, 9, 9, 9, 10, 10, 10, 11, 11, 11]
+    }
     otherValues = await shuffleArray(otherValues)
 
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < otherValues.length; i++) {
         const tileBox = document.getElementById(freeTiles[i].position)
         childParagraphf = await tileBox.querySelectorAll("p");
         childParagraphf[0].textContent = otherValues[i]
@@ -227,10 +314,16 @@ async function setOtherExpansionTileValues(freeTiles) {
     }
 }
 
-async function setExpansionBoard() {
+async function setExpansionBoard(expansionBoardOptions) {
+    console.log(expansionBoardOptions)
     try {
-        const freeTiles = await setExpansionRedTileValues() 
-       setOtherExpansionTileValues(freeTiles)
+        const freeTilesAfterRed = await setExpansionRedTileValues(expansionBoardOptions)
+        if (expansionBoardOptions.smallValuesNotTouching === true) {
+            const freeTilesAfterSmall = await setExpansion2and12Values(freeTilesAfterRed)
+            await setOtherExpansionTileValues(expansionBoardOptions, freeTilesAfterSmall)
+        } else {
+            await setOtherExpansionTileValues(expansionBoardOptions, freeTilesAfterRed)
+        }
     } catch (error) {
         throw error;
     }

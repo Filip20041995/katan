@@ -1,19 +1,11 @@
 
 .wholeExpansionBoard {
   display: none;
+  transform: scale(1);
     /* Just for visualization */
   }
 
-  @media screen and (max-width: 1200px) {
-    .wholeDiv {
-      transform: scale(0.7);
-      /* Adjust the scale factor as needed */
-      transform-origin: center center;
-      border: 15px solid rgb(255, 157, 0);
-      /* Just for visualization */
-      outline: 3px solid black;
-    }
-  }
+
 
   .expansionContainerRow1 {
     display: flex;

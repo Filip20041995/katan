@@ -1,19 +1,11 @@
-
 .wholeStandardBoard {
   display: block;
-      /* Just for visualization */
-    }
+  transform: scale(1.2);
+  padding-top: 100px;
+  /* Just for visualization */
+}
 
-    @media screen and (max-width: 1200px) {
-      .wholeDiv {
-        transform: scale(0.7);
-        /* Adjust the scale factor as needed */
-        transform-origin: center center;
-        border: 15px solid rgb(255, 157, 0);
-        /* Just for visualization */
-        outline: 3px solid black;
-      }
-    }
+
 
     .containerRow1 {
       display: flex;

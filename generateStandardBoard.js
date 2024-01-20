@@ -35,6 +35,8 @@ let forbidenPositions = [
     positionsForBox17, positionsForBox18, positionsForBox19
 ];
 
+
+
 function generateResourceValuesArray() {
     let valuesArray = [];
     for (let i = 3; i < 12; i++) {
@@ -168,7 +170,7 @@ async function setRedTileValues() {
     desertParaf[0].style.display = "none";
 
     tileValuesArray = await tileValuesArray.filter(item => item.type !== "desert");
-    
+
     let randomPosition;
     let tileBox;
     let childParagraphf;
@@ -177,7 +179,7 @@ async function setRedTileValues() {
 
     const redValues = [6, 6, 8, 8]
     let redValueTilePositions = []
-    let freeTiles = tileValuesArray
+    let freeTilesAfterRed = tileValuesArray
 
     for (let i = 0; i < 4; i++) {
         //Setting red tile value
@@ -195,16 +197,50 @@ async function setRedTileValues() {
 
         redValueTilePositions.push(randomPosition)
     } 
-    freeTiles = await freeTiles.filter(item => !redValueTilePositions.includes(item.position));
-    return freeTiles
+    freeTilesAfterRed = await freeTilesAfterRed.filter(item => !redValueTilePositions.includes(item.position));
+    return freeTilesAfterRed
 }
 
-async function setOtherTileValues(freeTiles) {
+async function set2and12Values(freeTilesAfterRed) {
+    let randomPosition;
+    let tileBox;
+    let childParagraphf;
+    let tile;
+    let tileforbidenPositions;
 
-    let otherValues = [2, 12, 3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
+    let otherValues = [2, 12]
+    let smallValueTilePositions = []
+    let freeTilesAfterSmall = freeTilesAfterRed
+ 
+    for (let i = 0; i < 2; i++) {
+        //Setting red tile value
+        let randomIndex = await getRandomInt(0, freeTilesAfterRed.length - 1);
+        randomPosition = await freeTilesAfterRed[randomIndex].position;
+        tileBox = await document.getElementById(randomPosition)
+        childParagraphf = await tileBox.querySelectorAll("p");
+        childParagraphf[0].textContent = otherValues[i]
+        //removing forbiden tiles
+        tile = await freeTilesAfterRed.find(item => item.position == randomPosition);
+        tileforbidenPositions = tile.forbidenPositions
+        tileforbidenPositions.push(randomPosition)
+        freeTilesAfterRed = await freeTilesAfterRed.filter(item => !tileforbidenPositions.includes(item.position));
+
+        smallValueTilePositions.push(randomPosition)
+    } 
+    freeTilesAfterSmall = await freeTilesAfterSmall.filter(item => !smallValueTilePositions.includes(item.position));
+    return freeTilesAfterSmall
+}
+
+async function setOtherTileValues(options, freeTiles) {
+    let otherValues
+  if(options.smallValuesNotTouching === true){
+    otherValues = [3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
+  }else{
+    otherValues = [2, 12, 3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
+  }
     otherValues = await shuffleArray(otherValues)
 
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < otherValues.length; i++) {
         const tileBox = document.getElementById(freeTiles[i].position)
         childParagraphf = await tileBox.querySelectorAll("p");
         childParagraphf[0].textContent = otherValues[i]
@@ -212,10 +248,16 @@ async function setOtherTileValues(freeTiles) {
     }
 }
 
-async function setStandardBoard() {
+async function setStandardBoard(standardBoardOptions) {
+    console.log(standardBoardOptions)
     try {
-        const freeTiles = await setRedTileValues() 
-        setOtherTileValues(freeTiles)
+        const freeTilesAfterRed = await setRedTileValues()
+        if(standardBoardOptions.smallValuesNotTouching === true){
+            const freeTilesAfterSmall = await set2and12Values(freeTilesAfterRed)
+            await setOtherTileValues(standardBoardOptions ,freeTilesAfterSmall)
+        }else{
+            await setOtherTileValues(standardBoardOptions ,freeTilesAfterRed)
+        }
     } catch (error) {
         throw error;
     }

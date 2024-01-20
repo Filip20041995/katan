@@ -10,11 +10,19 @@
   <link rel="stylesheet" href="styles\commonStyle.css">
   <link rel="stylesheet" href="styles\standardBoardStyle.css">
   <link rel="stylesheet" href="styles\expansionBoardStyle.css">
+  <!-- Intial options and board load -->
   <script>
+  let standardBoardOptions = {
+        smallValuesNotTouching: false,
+        desertsNotTouching: false
+    }
 
-
+    let expansionBoardOptions = {
+        smallValuesNotTouching: false,
+        desertsNotTouching: false,
+    }
     window.onload = function () {
-      setStandardBoard()
+      setStandardBoard(standardBoardOptions)
     };
   </script>
 
@@ -26,50 +34,119 @@
       <h1>KATAN</h1>
       <h2>RANDOMIZER</h2>
     </div>
+        <!-- Buttons -->
     <div class="buttonsBox" id="buttonsBox">
-      <button class="generateButton" id="generateStandardButton" onclick="setStandardBoard()" style="display: block;">Generate</button>
-      <button class="generateButton" id="generateExpansionButton" onclick="setExpansionBoard()" style="display: none;">Generate</button>
-      <label class="toggle">
-        <input class="toggle-checkbox" type="checkbox" id="expansionCheckbox">
-        <div class="toggle-switch"></div>
-        <span class="toggle-label">5 to 6 player expansion</span>
-      </label>
+      <button class="generateButton" id="generateStandardButton" onclick="setStandardBoard(standardBoardOptions)" style="display: block;">Generate</button>
+      <button class="generateButton" id="generateExpansionButton" onclick="setExpansionBoard(expansionBoardOptions)" style="display: none;">Generate</button>
+      <button class="generateButton" onclick="openModal()" style="margin-top: 15px;">Options</button>
     </div>
 
+    <!-- Options Modal -->
+<div id="optionsModal" class="overlay">
+  <div class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2 class="modalTitle">Generating board options</h2>
+
+    <label class="toggle">
+      <input class="toggle-checkbox" type="checkbox" id="expansionCheckbox">
+      <div class="toggle-switch"></div>
+      <span class="toggle-label">5 to 6 player expansion</span>
+    </label>
+
+    <label class="toggle">
+      <input class="toggle-checkbox" type="checkbox" id="2and12Checkbox">
+      <div class="toggle-switch"></div>
+      <span class="toggle-label">2 and 12 can't touch</span>
+    </label>
+
+    <label class="toggle">
+      <input class="toggle-checkbox" type="checkbox" id="desertsCheckbox">
+      <div class="toggle-switch"></div>
+      <span class="toggle-label">2 deserts can't touch</span>
+    </label>
+    <button class="generateButton" onclick="closeModal()" style="margin-top: 15px;">Close Options</button>
+  </div>
+</div>
+
+<!-- Open/close modal scripts -->
+    <script>
+  function openModal() {
+    document.getElementById('optionsModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('optionsModal').style.display = 'none';
+  }
+    </script>
+
     <script src="generateStandardBoard.js">
-      document.getElementById("generateStandardButton").addEventListener("click", setStandardBoard());
+      document.getElementById("generateStandardButton").addEventListener("click", setStandardBoard(standardBoardOptions));
     </script>
 
     <script src="generateExpansionBoard.js">
-      document.getElementById("generateExpansionButton").addEventListener("click", setExpansionBoard());
+      document.getElementById("generateExpansionButton").addEventListener("click", setExpansionBoard(expansionBoardOptions));
     </script>
 
     <script>
-      //Toogle function
-      function toggleChange() {
-        let checkbox = document.getElementById('expansionCheckbox');
-        let standardGenerateButton = document.querySelector('#generateStandardButton');
-        let expansionGenerateButton = document.querySelector('#generateExpansionButton');
-        let standardBoard = document.querySelector('#wholeStandardBoard');
-        let expansionBoard = document.querySelector('#wholeExpansionBoard');
-        //expansion is turned on
+      //Toogle 2 and 12 touching function
+      function toggle2and12Change() {
+        let checkbox = document.getElementById('2and12Checkbox');
         if (checkbox.checked) {
-          expansionBoard.style.display = 'block';
-          standardBoard.style.display = 'none';
-          expansionGenerateButton.style.display = 'block';
-          standardGenerateButton.style.display = 'none';
-          document.getElementById("expansionCheckbox").addEventListener("change", setExpansionBoard());
-          //espansion is turned off
+          standardBoardOptions.smallValuesNotTouching = true;
+          expansionBoardOptions.smallValuesNotTouching = true;
+          document.getElementById("2and12Checkbox").addEventListener("change", setStandardBoard(standardBoardOptions));
+          document.getElementById("2and12Checkbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
         } else {
-          expansionBoard.style.display = 'none';
-          standardBoard.style.display = 'block';
-          expansionGenerateButton.style.display = 'none';
-          standardGenerateButton.style.display = 'block';
-          document.getElementById("expansionCheckbox").addEventListener("change", setStandardBoard());
+          standardBoardOptions.smallValuesNotTouching = false;
+          expansionBoardOptions.smallValuesNotTouching = false;
+          document.getElementById("2and12Checkbox").addEventListener("change", setStandardBoard(standardBoardOptions));
+          document.getElementById("2and12Checkbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
         }
       }
-      document.getElementById('expansionCheckbox').addEventListener('change', toggleChange);
+      document.getElementById('2and12Checkbox').addEventListener('change', toggle2and12Change);
     </script>
+
+<script>
+  //2 desert touching function
+  function toggleDesertsTouchingChange() {
+    let checkbox = document.getElementById('desertsCheckbox');
+    if (checkbox.checked) {
+      expansionBoardOptions.desertsNotTouching = true;
+      document.getElementById("desertsCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
+    } else {
+      expansionBoardOptions.desertsNotTouching = false;
+      document.getElementById("desertsCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
+    }
+  }
+  document.getElementById('desertsCheckbox').addEventListener('change', toggleDesertsTouchingChange);
+</script>
+
+<script>
+  //Toogle Expansion function
+  function toggleExpansionChange() {
+    let checkbox = document.getElementById('expansionCheckbox');
+    let standardGenerateButton = document.querySelector('#generateStandardButton');
+    let expansionGenerateButton = document.querySelector('#generateExpansionButton');
+    let standardBoard = document.querySelector('#wholeStandardBoard');
+    let expansionBoard = document.querySelector('#wholeExpansionBoard');
+    //expansion is turned on
+    if (checkbox.checked) {
+      expansionBoard.style.display = 'block';
+      standardBoard.style.display = 'none';
+      expansionGenerateButton.style.display = 'block';
+      standardGenerateButton.style.display = 'none';
+      document.getElementById("expansionCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
+      //espansion is turned off
+    } else {
+      expansionBoard.style.display = 'none';
+      standardBoard.style.display = 'block';
+      expansionGenerateButton.style.display = 'none';
+      standardGenerateButton.style.display = 'block';
+      document.getElementById("expansionCheckbox").addEventListener("change", setStandardBoard(standardBoardOptions));
+    }
+  }
+  document.getElementById('expansionCheckbox').addEventListener('change', toggleExpansionChange);
+</script>
 
     <div class="wholeStandardBoard" id="wholeStandardBoard">
       <div class="containerRow1">
