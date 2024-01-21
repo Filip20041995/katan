@@ -7,25 +7,25 @@ class resurceTile {
 }
 
 /*Forbiden tiles*/
-let positionsForBox1 = ['box2', 'box4', 'box5']
-let positionsForBox2 = ['box1', 'box3', 'box5', 'box6']
-let positionsForBox3 = ['box2', 'box6', 'box7']
-let positionsForBox4 = ['box1', 'box5', 'box8', 'box9']
-let positionsForBox5 = ['box1', 'box2', 'box4', 'box6', 'box9', 'box10']
-let positionsForBox6 = ['box2', 'box3', 'box5', 'box7', 'box10', 'box11']
-let positionsForBox7 = ['box3', 'box6', 'box11', 'box12']
-let positionsForBox8 = ['box4', 'box9', 'box13']
-let positionsForBox9 = ['box4', 'box5', 'box8', 'box10', 'box13', 'box14']
-let positionsForBox10 = ['box5', 'box6', 'box9', 'box11', 'box14', 'box15']
-let positionsForBox11 = ['box6', 'box7', 'box10', 'box12', 'box15', 'box16']
-let positionsForBox12 = ['box7', 'box11', 'box16']
-let positionsForBox13 = ['box8', 'box9', 'box14', 'box17']
-let positionsForBox14 = ['box9', 'box10', 'box13', 'box15', 'box17', 'box18']
-let positionsForBox15 = ['box10', 'box11', 'box14', 'box16', 'box18', 'box19']
-let positionsForBox16 = ['box11', 'box12', 'box15', 'box19']
-let positionsForBox17 = ['box13', 'box14', 'box18']
-let positionsForBox18 = ['box17', 'box14', 'box15', 'box19']
-let positionsForBox19 = ['box15', 'box16', 'box18']
+let positionsForBox1 =  {position:'box1', unavailabelPositions:['box2', 'box4', 'box5']}
+let positionsForBox2 = {position:'box2', unavailabelPositions:['box1', 'box3', 'box5', 'box6']}
+let positionsForBox3 = {position:'box3', unavailabelPositions:['box2', 'box6', 'box7']}
+let positionsForBox4 = {position:'box4', unavailabelPositions:['box1', 'box5', 'box8', 'box9']}
+let positionsForBox5 = {position:'box5', unavailabelPositions:['box1', 'box2', 'box4', 'box6', 'box9', 'box10']}
+let positionsForBox6 = {position:'box6', unavailabelPositions:['box2', 'box3', 'box5', 'box7', 'box10', 'box11']}
+let positionsForBox7 = {position:'box7', unavailabelPositions:['box3', 'box6', 'box11', 'box12']}
+let positionsForBox8 = {position:'box8', unavailabelPositions:['box4', 'box9', 'box13']}
+let positionsForBox9 = {position:'box9', unavailabelPositions:['box4', 'box5', 'box8', 'box10', 'box13', 'box14']}
+let positionsForBox10 = {position:'box10', unavailabelPositions:['box5', 'box6', 'box9', 'box11', 'box14', 'box15']}
+let positionsForBox11 = {position:'box11', unavailabelPositions:['box6', 'box7', 'box10', 'box12', 'box15', 'box16']}
+let positionsForBox12 = {position:'box12', unavailabelPositions:['box7', 'box11', 'box16']}
+let positionsForBox13 = {position:'box13', unavailabelPositions:['box8', 'box9', 'box14', 'box17']}
+let positionsForBox14 = {position:'box14', unavailabelPositions:['box9', 'box10', 'box13', 'box15', 'box17', 'box18']}
+let positionsForBox15 = {position:'box15', unavailabelPositions:['box10', 'box11', 'box14', 'box16', 'box18', 'box19']}
+let positionsForBox16 = {position:'box16', unavailabelPositions:['box11', 'box12', 'box15', 'box19']}
+let positionsForBox17 = {position:'box17', unavailabelPositions:['box13', 'box14', 'box18']}
+let positionsForBox18 = {position:'box18', unavailabelPositions:['box17', 'box14', 'box15', 'box19']}
+let positionsForBox19 ={position:'box19', unavailabelPositions: ['box15', 'box16', 'box18']}
 
 let forbidenPositions = [
     positionsForBox1, positionsForBox2, positionsForBox3, positionsForBox4,
@@ -125,17 +125,69 @@ async function restart() {
     return tileValuesArray
 }
 
-async function setTiles() {
-    const resurceTilesValues = randomizeResourceTile()
-    let tileValuesArray = []
+async function getAllTileBoxPositions() {
+    let allTileBoxPositions = []
     for (let i = 0; i < 19; i++) {
-        //Generate tile with position
-        const tileBox = document.getElementById(`box${i + 1}`)
-        const childImages = tileBox.querySelectorAll("img");
-        childImages[0].src = `images/${resurceTilesValues[i].type}.png`
-        tileValuesArray.push({ position: `box${i + 1}`, type: resurceTilesValues[i].type, forbidenPositions: forbidenPositions[i] });
+        allTileBoxPositions.push(`box${i + 1}`)
     }
-    return tileValuesArray
+    return allTileBoxPositions
+}
+
+
+async function setDesertMiddle() {
+    let desertTileValuesArray = []
+    let availableTileBoxPositions = []
+    //get all positiotns
+    let allTileBoxPositions = await getAllTileBoxPositions()
+    availableTileBoxPositions = allTileBoxPositions
+    //Set desert tile in middle
+    const desertTileBox1 = document.getElementById(`box10`)
+    const desertImg1 = desertTileBox1.querySelectorAll("img");
+    desertImg1[0].src = `images/desert.png`
+    desertTileValuesArray.push({ position: 'box10', type: "desert", forbidenPositions: forbidenPositions[9].unavailabelPositions });
+    //set up array of all positions without the desert tiles
+    availableTileBoxPositions = availableTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
+    return {
+        desertTileValuesArray:desertTileValuesArray,
+        availableTileBoxPositions:availableTileBoxPositions
+    }
+}
+
+async function setTiles() {
+    //Set desert in middle
+    if(standardBoardOptions.desertInMiddle === true){
+        let afterDesertTilesObject = await setDesertMiddle()
+        let tileValuesArray = []
+        let resurceTilesValues = randomizeExpansionResourceTile()
+        resurceTilesValues = resurceTilesValues.filter(item => item.type !== "desert");
+        for (let i = 0; i < 18; i++) {
+            //Generate tile with position
+            const tileBox = document.getElementById(afterDesertTilesObject.availableTileBoxPositions[i])
+            const childImages = tileBox.querySelectorAll("img");
+            childImages[0].src = `images/${resurceTilesValues[i].type}.png`
+            let unavailabelPositions = forbidenPositions.find(obj => obj.position === afterDesertTilesObject.availableTileBoxPositions[i]);
+            tileValuesArray.push({ position: afterDesertTilesObject.availableTileBoxPositions[i], type: resurceTilesValues[i].type, forbidenPositions: unavailabelPositions.unavailabelPositions });
+        }
+        tileValuesArray.push(afterDesertTilesObject.desertTileValuesArray[0])
+        tileValuesArray.sort((a, b) => {
+            const numericA = parseInt(a.position.match(/\d+/)[0]);
+            const numericB = parseInt(b.position.match(/\d+/)[0]);
+            return numericA - numericB;
+          });
+        return tileValuesArray
+        //Fully random resurce tile positions
+    }else if(standardBoardOptions.desertInMiddle === false){
+        const resurceTilesValues = randomizeResourceTile()
+        let tileValuesArray = []
+        for (let i = 0; i < 19; i++) {
+            //Generate tile with position
+            const tileBox = document.getElementById(`box${i + 1}`)
+            const childImages = tileBox.querySelectorAll("img");
+            childImages[0].src = `images/${resurceTilesValues[i].type}.png`
+            tileValuesArray.push({ position: `box${i + 1}`, type: resurceTilesValues[i].type, forbidenPositions: forbidenPositions[i].unavailabelPositions });
+        }
+        return tileValuesArray
+    }
 }
 
 function getRandomInt(min, max) {
@@ -191,10 +243,10 @@ async function setRedTileValues() {
         childParagraphf[0].style.color = "#f30909";
         //removing forbiden tiles
         tile = await tileValuesArray.find(item => item.position == randomPosition);
+        tile = await tileValuesArray.find(item => item.position == randomPosition);
         tileforbidenPositions = tile.forbidenPositions
         tileforbidenPositions.push(randomPosition)
         tileValuesArray = await tileValuesArray.filter(item => !tileforbidenPositions.includes(item.position));
-
         redValueTilePositions.push(randomPosition)
     } 
     freeTilesAfterRed = await freeTilesAfterRed.filter(item => !redValueTilePositions.includes(item.position));
@@ -250,7 +302,6 @@ async function setOtherTileValues(options, freeTiles) {
 }
 
 async function setStandardBoard(standardBoardOptions) {
-    console.log(standardBoardOptions)
     try {
         const freeTilesAfterRed = await setRedTileValues()
         if(standardBoardOptions.smallValuesNotTouching === true){

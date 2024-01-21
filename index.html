@@ -13,7 +13,7 @@
   <script>
   let standardBoardOptions = {
         smallValuesNotTouching: false,
-        desertsNotTouching: false
+        desertInMiddle: false
     }
 
     let expansionBoardOptions = {
@@ -57,9 +57,15 @@
       <div class="toggle-switch"></div>
       <span class="toggle-label">2 and 12 can't touch</span>
     </label>
-
+    <h2 class="modalTitle">Standard borad options</h2>
     <label class="toggle">
-      <input class="toggle-checkbox" type="checkbox" id="desertsCheckbox">
+      <input class="toggle-checkbox" type="checkbox" id="desertMiddleCheckbox">
+      <div class="toggle-switch"></div>
+      <span class="toggle-label">Desert set in middle</span>
+    </label>
+    <h2 class="modalTitle">Expansion board options</h2>
+    <label class="toggle">
+      <input class="toggle-checkbox" type="checkbox" id="desertsTouchingCheckbox">
       <div class="toggle-switch"></div>
       <span class="toggle-label">2 deserts can't touch</span>
     </label>
@@ -108,16 +114,31 @@
 <script>
   //2 desert touching function
   function toggleDesertsTouchingChange() {
-    let checkbox = document.getElementById('desertsCheckbox');
+    let checkbox = document.getElementById('desertsTouchingCheckbox');
     if (checkbox.checked) {
       expansionBoardOptions.desertsNotTouching = true;
-      document.getElementById("desertsCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
+      document.getElementById("desertsTouchingCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
     } else {
       expansionBoardOptions.desertsNotTouching = false;
-      document.getElementById("desertsCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
+      document.getElementById("desertsTouchingCheckbox").addEventListener("change", setExpansionBoard(expansionBoardOptions));
     }
   }
-  document.getElementById('desertsCheckbox').addEventListener('change', toggleDesertsTouchingChange);
+  document.getElementById('desertsTouchingCheckbox').addEventListener('change', toggleDesertsTouchingChange);
+</script>
+
+<script>
+  //Set desert in middle function
+  function toggleDesertMiddleChange() {
+    let checkbox = document.getElementById('desertMiddleCheckbox');
+    if (checkbox.checked) {
+      standardBoardOptions.desertInMiddle = true;
+      document.getElementById("desertMiddleCheckbox").addEventListener("change", setStandardBoard(standardBoardOptions));
+    } else {
+      standardBoardOptions.desertInMiddle = false;
+      document.getElementById("desertMiddleCheckbox").addEventListener("change", setStandardBoard(standardBoardOptions));
+    }
+  }
+  document.getElementById('desertMiddleCheckbox').addEventListener('change', toggleDesertMiddleChange);
 </script>
 
 <script>
