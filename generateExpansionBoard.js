@@ -316,7 +316,6 @@ async function setOtherExpansionTileValues(options, freeTiles) {
 }
 
 async function setExpansionBoard(expansionBoardOptions) {
-    console.log(expansionBoardOptions)
     try {
         const freeTilesAfterRed = await setExpansionRedTileValues(expansionBoardOptions)
         if (expansionBoardOptions.smallValuesNotTouching === true) {
