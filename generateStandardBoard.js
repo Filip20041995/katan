@@ -158,7 +158,7 @@ async function setTiles() {
     if(standardBoardOptions.desertInMiddle === true){
         let afterDesertTilesObject = await setDesertMiddle()
         let tileValuesArray = []
-        let resurceTilesValues = randomizeExpansionResourceTile()
+        let resurceTilesValues = randomizeResourceTile()
         resurceTilesValues = resurceTilesValues.filter(item => item.type !== "desert");
         for (let i = 0; i < 18; i++) {
             //Generate tile with position
