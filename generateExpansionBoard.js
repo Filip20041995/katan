@@ -1,40 +1,40 @@
-/*Forbiden tiles*/
-let positionsForExpansionBox1 = {position:'expansionBox1', unavailablePositions:['expansionBox2', 'expansionBox4', 'expansionBox5']}
-let positionsForExpansionBox2 = {position:'expansionBox2', unavailablePositions:['expansionBox1', 'expansionBox3', 'expansionBox5', 'expansionBox6']}
-let positionsForExpansionBox3 = {position:'expansionBox3', unavailablePositions:['expansionBox2', 'expansionBox6', 'expansionBox7']}
+/*unavailable tile positions*/
+let positionsForExpansionBox1 = { position: 'expansionBox1', unavailablePositions: ['expansionBox2', 'expansionBox4', 'expansionBox5'] }
+let positionsForExpansionBox2 = { position: 'expansionBox2', unavailablePositions: ['expansionBox1', 'expansionBox3', 'expansionBox5', 'expansionBox6'] }
+let positionsForExpansionBox3 = { position: 'expansionBox3', unavailablePositions: ['expansionBox2', 'expansionBox6', 'expansionBox7'] }
 
-let positionsForExpansionBox4 = {position:'expansionBox4', unavailablePositions:['expansionBox1', 'expansionBox5', 'expansionBox8', 'expansionBox9']}
-let positionsForExpansionBox5 = {position:'expansionBox5', unavailablePositions:['expansionBox1', 'expansionBox2', 'expansionBox4', 'expansionBox6', 'expansionBox9', 'expansionBox10']}
-let positionsForExpansionBox6 = {position:'expansionBox6', unavailablePositions:['expansionBox2', 'expansionBox3', 'expansionBox5', 'expansionBox7', 'expansionBox10', 'expansionBox11']}
-let positionsForExpansionBox7 = {position:'expansionBox7', unavailablePositions:['expansionBox3', 'expansionBox6', 'expansionBox11', 'expansionBox12']}
+let positionsForExpansionBox4 = { position: 'expansionBox4', unavailablePositions: ['expansionBox1', 'expansionBox5', 'expansionBox8', 'expansionBox9'] }
+let positionsForExpansionBox5 = { position: 'expansionBox5', unavailablePositions: ['expansionBox1', 'expansionBox2', 'expansionBox4', 'expansionBox6', 'expansionBox9', 'expansionBox10'] }
+let positionsForExpansionBox6 = { position: 'expansionBox6', unavailablePositions: ['expansionBox2', 'expansionBox3', 'expansionBox5', 'expansionBox7', 'expansionBox10', 'expansionBox11'] }
+let positionsForExpansionBox7 = { position: 'expansionBox7', unavailablePositions: ['expansionBox3', 'expansionBox6', 'expansionBox11', 'expansionBox12'] }
 
-let positionsForExpansionBox8 = {position:'expansionBox8', unavailablePositions:['expansionBox4', 'expansionBox9', 'expansionBox13', 'expansionBox14']}
-let positionsForExpansionBox9 = {position:'expansionBox9', unavailablePositions:['expansionBox4', 'expansionBox5', 'expansionBox8', 'expansionBox10', 'expansionBox14', 'expansionBox15']}
-let positionsForExpansionBox10 = {position:'expansionBox10', unavailablePositions:['expansionBox5', 'expansionBox6', 'expansionBox9', 'expansionBox11', 'expansionBox15', 'expansionBox16']}
-let positionsForExpansionBox11 = {position:'expansionBox11', unavailablePositions:['expansionBox6', 'expansionBox7', 'expansionBox10', 'expansionBox12', 'expansionBox16', 'expansionBox17']}
-let positionsForExpansionBox12 = {position:'expansionBox12', unavailablePositions:['expansionBox7', 'expansionBox11', 'expansionBox17', 'expansionBox18']}
+let positionsForExpansionBox8 = { position: 'expansionBox8', unavailablePositions: ['expansionBox4', 'expansionBox9', 'expansionBox13', 'expansionBox14'] }
+let positionsForExpansionBox9 = { position: 'expansionBox9', unavailablePositions: ['expansionBox4', 'expansionBox5', 'expansionBox8', 'expansionBox10', 'expansionBox14', 'expansionBox15'] }
+let positionsForExpansionBox10 = { position: 'expansionBox10', unavailablePositions: ['expansionBox5', 'expansionBox6', 'expansionBox9', 'expansionBox11', 'expansionBox15', 'expansionBox16'] }
+let positionsForExpansionBox11 = { position: 'expansionBox11', unavailablePositions: ['expansionBox6', 'expansionBox7', 'expansionBox10', 'expansionBox12', 'expansionBox16', 'expansionBox17'] }
+let positionsForExpansionBox12 = { position: 'expansionBox12', unavailablePositions: ['expansionBox7', 'expansionBox11', 'expansionBox17', 'expansionBox18'] }
 
-let positionsForExpansionBox13 = {position:'expansionBox13', unavailablePositions:['expansionBox8', 'expansionBox14', 'expansionBox19']}
-let positionsForExpansionBox14 = {position:'expansionBox14', unavailablePositions:['expansionBox8', 'expansionBox9', 'expansionBox13', 'expansionBox15', 'expansionBox19', 'expansionBox20']}
-let positionsForExpansionBox15 = {position:'expansionBox15', unavailablePositions:['expansionBox9', 'expansionBox10', 'expansionBox14', 'expansionBox16', 'expansionBox20', 'expansionBox21']}
-let positionsForExpansionBox16 = {position:'expansionBox16', unavailablePositions:['expansionBox10', 'expansionBox11', 'expansionBox15', 'expansionBox17', 'expansionBox21', 'expansionBox22']}
-let positionsForExpansionBox17 = {position:'expansionBox17', unavailablePositions: ['expansionBox11', 'expansionBox12', 'expansionBox16', 'expansionBox18', 'expansionBox22', 'expansionBox23']}
-let positionsForExpansionBox18 = {position:'expansionBox18', unavailablePositions:['expansionBox12', 'expansionBox17', 'expansionBox23']}
+let positionsForExpansionBox13 = { position: 'expansionBox13', unavailablePositions: ['expansionBox8', 'expansionBox14', 'expansionBox19'] }
+let positionsForExpansionBox14 = { position: 'expansionBox14', unavailablePositions: ['expansionBox8', 'expansionBox9', 'expansionBox13', 'expansionBox15', 'expansionBox19', 'expansionBox20'] }
+let positionsForExpansionBox15 = { position: 'expansionBox15', unavailablePositions: ['expansionBox9', 'expansionBox10', 'expansionBox14', 'expansionBox16', 'expansionBox20', 'expansionBox21'] }
+let positionsForExpansionBox16 = { position: 'expansionBox16', unavailablePositions: ['expansionBox10', 'expansionBox11', 'expansionBox15', 'expansionBox17', 'expansionBox21', 'expansionBox22'] }
+let positionsForExpansionBox17 = { position: 'expansionBox17', unavailablePositions: ['expansionBox11', 'expansionBox12', 'expansionBox16', 'expansionBox18', 'expansionBox22', 'expansionBox23'] }
+let positionsForExpansionBox18 = { position: 'expansionBox18', unavailablePositions: ['expansionBox12', 'expansionBox17', 'expansionBox23'] }
 
-let positionsForExpansionBox19 = {position:'expansionBox19', unavailablePositions:['expansionBox13', 'expansionBox14', 'expansionBox20', 'expansionBox24']}
-let positionsForExpansionBox20 = {position:'expansionBox20', unavailablePositions:['expansionBox14', 'expansionBox15', 'expansionBox19', 'expansionBox21', 'expansionBox24', 'expansionBox25']}
-let positionsForExpansionBox21 = {position:'expansionBox21', unavailablePositions:['expansionBox15', 'expansionBox16', 'expansionBox20', 'expansionBox22', 'expansionBox25', 'expansionBox26']}
-let positionsForExpansionBox22 = {position:'expansionBox22', unavailablePositions:['expansionBox16', 'expansionBox17', 'expansionBox21', 'expansionBox23', 'expansionBox26', 'expansionBox27']}
-let positionsForExpansionBox23 = {position:'expansionBox23', unavailablePositions:['expansionBox17', 'expansionBox18', 'expansionBox22', 'expansionBox27']}
+let positionsForExpansionBox19 = { position: 'expansionBox19', unavailablePositions: ['expansionBox13', 'expansionBox14', 'expansionBox20', 'expansionBox24'] }
+let positionsForExpansionBox20 = { position: 'expansionBox20', unavailablePositions: ['expansionBox14', 'expansionBox15', 'expansionBox19', 'expansionBox21', 'expansionBox24', 'expansionBox25'] }
+let positionsForExpansionBox21 = { position: 'expansionBox21', unavailablePositions: ['expansionBox15', 'expansionBox16', 'expansionBox20', 'expansionBox22', 'expansionBox25', 'expansionBox26'] }
+let positionsForExpansionBox22 = { position: 'expansionBox22', unavailablePositions: ['expansionBox16', 'expansionBox17', 'expansionBox21', 'expansionBox23', 'expansionBox26', 'expansionBox27'] }
+let positionsForExpansionBox23 = { position: 'expansionBox23', unavailablePositions: ['expansionBox17', 'expansionBox18', 'expansionBox22', 'expansionBox27'] }
 
-let positionsForExpansionBox24 = {position:'expansionBox24', unavailablePositions:['expansionBox19', 'expansionBox20','expansionBox25','expansionBox28']}
-let positionsForExpansionBox25 = {position:'expansionBox25', unavailablePositions:['expansionBox20', 'expansionBox21', 'expansionBox24', 'expansionBox26', 'expansionBox28', 'expansionBox29']}
-let positionsForExpansionBox26 = {position:'expansionBox26', unavailablePositions:['expansionBox21', 'expansionBox22', 'expansionBox25', 'expansionBox27', 'expansionBox29', 'expansionBo30']}
-let positionsForExpansionBox27 = {position:'expansionBox27', unavailablePositions:['expansionBox22', 'expansionBox23', 'expansionBox26', 'expansionBox30']}
+let positionsForExpansionBox24 = { position: 'expansionBox24', unavailablePositions: ['expansionBox19', 'expansionBox20', 'expansionBox25', 'expansionBox28'] }
+let positionsForExpansionBox25 = { position: 'expansionBox25', unavailablePositions: ['expansionBox20', 'expansionBox21', 'expansionBox24', 'expansionBox26', 'expansionBox28', 'expansionBox29'] }
+let positionsForExpansionBox26 = { position: 'expansionBox26', unavailablePositions: ['expansionBox21', 'expansionBox22', 'expansionBox25', 'expansionBox27', 'expansionBox29', 'expansionBo30'] }
+let positionsForExpansionBox27 = { position: 'expansionBox27', unavailablePositions: ['expansionBox22', 'expansionBox23', 'expansionBox26', 'expansionBox30'] }
 
-let positionsForExpansionBox28 = {position:'expansionBox28', unavailablePositions:['expansionBox24', 'expansionBox25', 'expansionBox29']}
-let positionsForExpansionBox29 = {position:'expansionBox29', unavailablePositions:['expansionBox25', 'expansionBox26', 'expansionBox28', 'expansionBox30']}
-let positionsForExpansionBox30 = {position:'expansionBox30', unavailablePositions:['expansionBox26', 'expansionBox27', 'expansionBox29']}
+let positionsForExpansionBox28 = { position: 'expansionBox28', unavailablePositions: ['expansionBox24', 'expansionBox25', 'expansionBox29'] }
+let positionsForExpansionBox29 = { position: 'expansionBox29', unavailablePositions: ['expansionBox25', 'expansionBox26', 'expansionBox28', 'expansionBox30'] }
+let positionsForExpansionBox30 = { position: 'expansionBox30', unavailablePositions: ['expansionBox26', 'expansionBox27', 'expansionBox29'] }
 
 
 let unavailableExpansionPositionsArray = [
@@ -107,8 +107,8 @@ function randomizeExpansionResourceTile() {
 
     for (let i = 0; i < 30; i++) {
         let titleType = generateRandomResourceType(typesArray)
-            let resourceTile = new resurceTile(titleType, 0);
-            tileArray.push(resourceTile);
+        let resourceTile = new resurceTile(titleType, 0);
+        tileArray.push(resourceTile);
     }
     return tileArray
 }
@@ -157,18 +157,18 @@ async function setDesertNotTouching() {
     const desertImg2 = desertTileBox2.querySelectorAll("img");
     desertImg2[0].src = `images/desert.png`
     let desert2UnavailablePosititons = unavailableExpansionPositionsArray.find(obj => obj.position === availableDesertBoxPositions[randomIndex]);
-    desertTileValuesArray.push({ position: availableDesertBoxPositions[randomIndex], type: "desert", unavailableExpansionPositions: desert2UnavailablePosititons.unavailablePositions});
+    desertTileValuesArray.push({ position: availableDesertBoxPositions[randomIndex], type: "desert", unavailableExpansionPositions: desert2UnavailablePosititons.unavailablePositions });
     //set up array of all positions without the desert tiles
-    availableExpansionTileBoxPositions= availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
-    availableExpansionTileBoxPositions= availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[1].position);
+    availableExpansionTileBoxPositions = availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
+    availableExpansionTileBoxPositions = availableExpansionTileBoxPositions.filter((item) => item !== desertTileValuesArray[1].position);
     return {
-        desertTileValuesArray:desertTileValuesArray,
-      availableExpansionTileBoxPositions:availableExpansionTileBoxPositions
+        desertTileValuesArray: desertTileValuesArray,
+        availableExpansionTileBoxPositions: availableExpansionTileBoxPositions
     }
 }
 
 async function setExpanionsTiles(expansionBoardOptions) {
-    if(expansionBoardOptions.desertsNotTouching === true){
+    if (expansionBoardOptions.desertsNotTouching === true) {
         let afterDesertTilesObject = await setDesertNotTouching()
         let tileValuesArray = []
         let resurceTilesValues = randomizeExpansionResourceTile()
@@ -187,11 +187,11 @@ async function setExpanionsTiles(expansionBoardOptions) {
             const numericA = parseInt(a.position.match(/\d+/)[0]);
             const numericB = parseInt(b.position.match(/\d+/)[0]);
             return numericA - numericB;
-          });
+        });
         return tileValuesArray
-      }else if(expansionBoardOptions.desertsNotTouching === false){
+    } else if (expansionBoardOptions.desertsNotTouching === false) {
         const resurceTilesValues = randomizeExpansionResourceTile()
-      let tileValuesArray = []  
+        let tileValuesArray = []
         for (let i = 0; i < 30; i++) {
             //Generate tile with position
             const tileBox = document.getElementById(`expansionBox${i + 1}`)
@@ -200,7 +200,7 @@ async function setExpanionsTiles(expansionBoardOptions) {
             tileValuesArray.push({ position: `expansionBox${i + 1}`, type: resurceTilesValues[i].type, unavailableExpansionPositions: unavailableExpansionPositionsArray[i].unavailablePositions });
         }
         return tileValuesArray
-      }
+    }
 }
 
 function getRandomInt(min, max) {

@@ -41,9 +41,9 @@
 
   @font-face {
     font-family: 'YourFontName';
-    src: url('public/fonts/Garamond-MT-Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('./fonts/Garamond-MT-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style:normal;
   }
 
   .buttonsBox {

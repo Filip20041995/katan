@@ -7,25 +7,25 @@ class resurceTile {
 }
 
 /*unavailble tile positions*/
-let positionsForBox1 =  {position:'box1', unavailablePositions:['box2', 'box4', 'box5']}
-let positionsForBox2 = {position:'box2', unavailablePositions:['box1', 'box3', 'box5', 'box6']}
-let positionsForBox3 = {position:'box3', unavailablePositions:['box2', 'box6', 'box7']}
-let positionsForBox4 = {position:'box4', unavailablePositions:['box1', 'box5', 'box8', 'box9']}
-let positionsForBox5 = {position:'box5', unavailablePositions:['box1', 'box2', 'box4', 'box6', 'box9', 'box10']}
-let positionsForBox6 = {position:'box6', unavailablePositions:['box2', 'box3', 'box5', 'box7', 'box10', 'box11']}
-let positionsForBox7 = {position:'box7', unavailablePositions:['box3', 'box6', 'box11', 'box12']}
-let positionsForBox8 = {position:'box8', unavailablePositions:['box4', 'box9', 'box13']}
-let positionsForBox9 = {position:'box9', unavailablePositions:['box4', 'box5', 'box8', 'box10', 'box13', 'box14']}
-let positionsForBox10 = {position:'box10', unavailablePositions:['box5', 'box6', 'box9', 'box11', 'box14', 'box15']}
-let positionsForBox11 = {position:'box11', unavailablePositions:['box6', 'box7', 'box10', 'box12', 'box15', 'box16']}
-let positionsForBox12 = {position:'box12', unavailablePositions:['box7', 'box11', 'box16']}
-let positionsForBox13 = {position:'box13', unavailablePositions:['box8', 'box9', 'box14', 'box17']}
-let positionsForBox14 = {position:'box14', unavailablePositions:['box9', 'box10', 'box13', 'box15', 'box17', 'box18']}
-let positionsForBox15 = {position:'box15', unavailablePositions:['box10', 'box11', 'box14', 'box16', 'box18', 'box19']}
-let positionsForBox16 = {position:'box16', unavailablePositions:['box11', 'box12', 'box15', 'box19']}
-let positionsForBox17 = {position:'box17', unavailablePositions:['box13', 'box14', 'box18']}
-let positionsForBox18 = {position:'box18', unavailablePositions:['box17', 'box14', 'box15', 'box19']}
-let positionsForBox19 ={position:'box19', unavailablePositions: ['box15', 'box16', 'box18']}
+let positionsForBox1 = { position: 'box1', unavailablePositions: ['box2', 'box4', 'box5'] }
+let positionsForBox2 = { position: 'box2', unavailablePositions: ['box1', 'box3', 'box5', 'box6'] }
+let positionsForBox3 = { position: 'box3', unavailablePositions: ['box2', 'box6', 'box7'] }
+let positionsForBox4 = { position: 'box4', unavailablePositions: ['box1', 'box5', 'box8', 'box9'] }
+let positionsForBox5 = { position: 'box5', unavailablePositions: ['box1', 'box2', 'box4', 'box6', 'box9', 'box10'] }
+let positionsForBox6 = { position: 'box6', unavailablePositions: ['box2', 'box3', 'box5', 'box7', 'box10', 'box11'] }
+let positionsForBox7 = { position: 'box7', unavailablePositions: ['box3', 'box6', 'box11', 'box12'] }
+let positionsForBox8 = { position: 'box8', unavailablePositions: ['box4', 'box9', 'box13'] }
+let positionsForBox9 = { position: 'box9', unavailablePositions: ['box4', 'box5', 'box8', 'box10', 'box13', 'box14'] }
+let positionsForBox10 = { position: 'box10', unavailablePositions: ['box5', 'box6', 'box9', 'box11', 'box14', 'box15'] }
+let positionsForBox11 = { position: 'box11', unavailablePositions: ['box6', 'box7', 'box10', 'box12', 'box15', 'box16'] }
+let positionsForBox12 = { position: 'box12', unavailablePositions: ['box7', 'box11', 'box16'] }
+let positionsForBox13 = { position: 'box13', unavailablePositions: ['box8', 'box9', 'box14', 'box17'] }
+let positionsForBox14 = { position: 'box14', unavailablePositions: ['box9', 'box10', 'box13', 'box15', 'box17', 'box18'] }
+let positionsForBox15 = { position: 'box15', unavailablePositions: ['box10', 'box11', 'box14', 'box16', 'box18', 'box19'] }
+let positionsForBox16 = { position: 'box16', unavailablePositions: ['box11', 'box12', 'box15', 'box19'] }
+let positionsForBox17 = { position: 'box17', unavailablePositions: ['box13', 'box14', 'box18'] }
+let positionsForBox18 = { position: 'box18', unavailablePositions: ['box17', 'box14', 'box15', 'box19'] }
+let positionsForBox19 = { position: 'box19', unavailablePositions: ['box15', 'box16', 'box18'] }
 
 let unavailablePositionsArray = [
     positionsForBox1, positionsForBox2, positionsForBox3, positionsForBox4,
@@ -148,14 +148,14 @@ async function setDesertMiddle() {
     //set up array of all positions without the desert tiles
     availableTileBoxPositions = availableTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
     return {
-        desertTileValuesArray:desertTileValuesArray,
-        availableTileBoxPositions:availableTileBoxPositions
+        desertTileValuesArray: desertTileValuesArray,
+        availableTileBoxPositions: availableTileBoxPositions
     }
 }
 
 async function setTiles() {
     //Set desert in middle
-    if(standardBoardOptions.desertInMiddle === true){
+    if (standardBoardOptions.desertInMiddle === true) {
         let afterDesertTilesObject = await setDesertMiddle()
         let tileValuesArray = []
         let resurceTilesValues = randomizeResourceTile()
@@ -173,10 +173,10 @@ async function setTiles() {
             const numericA = parseInt(a.position.match(/\d+/)[0]);
             const numericB = parseInt(b.position.match(/\d+/)[0]);
             return numericA - numericB;
-          });
+        });
         return tileValuesArray
         //Fully random resurce tile positions
-    }else if(standardBoardOptions.desertInMiddle === false){
+    } else if (standardBoardOptions.desertInMiddle === false) {
         const resurceTilesValues = randomizeResourceTile()
         let tileValuesArray = []
         for (let i = 0; i < 19; i++) {
@@ -196,11 +196,11 @@ function getRandomInt(min, max) {
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+}
 
 async function setRedTileValues() {
     //Setting all tiles
@@ -209,14 +209,14 @@ async function setRedTileValues() {
     //Remove old desert no-display
     for (let i = 0; i < 19; i++) {
         const oldBox = document.getElementById(`box${i + 1}`)
-    const oldParaf = oldBox.querySelectorAll("p");
-    oldParaf[0].style.display = "";
+        const oldParaf = oldBox.querySelectorAll("p");
+        oldParaf[0].style.display = "";
     }
 
     //remove dessert fom tile array
     let desertTile = await tileValuesArray.find(item => item.type == "desert");
     let desertTilePosition = desertTile.position
- 
+
     const desert = document.getElementById(desertTilePosition)
     const desertParaf = desert.querySelectorAll("p");
     desertParaf[0].style.display = "none";
@@ -248,7 +248,7 @@ async function setRedTileValues() {
         tileunavailablePositions.push(randomPosition)
         tileValuesArray = await tileValuesArray.filter(item => !tileunavailablePositions.includes(item.position));
         redValueTilePositions.push(randomPosition)
-    } 
+    }
     freeTilesAfterRed = await freeTilesAfterRed.filter(item => !redValueTilePositions.includes(item.position));
     return freeTilesAfterRed
 }
@@ -263,7 +263,7 @@ async function set2and12Values(freeTilesAfterRed) {
     let otherValues = [2, 12]
     let smallValueTilePositions = []
     let freeTilesAfterSmall = freeTilesAfterRed
- 
+
     for (let i = 0; i < 2; i++) {
         //Setting red tile value
         let randomIndex = await getRandomInt(0, freeTilesAfterRed.length - 1);
@@ -279,18 +279,18 @@ async function set2and12Values(freeTilesAfterRed) {
         freeTilesAfterRed = await freeTilesAfterRed.filter(item => !tileunavailablePositions.includes(item.position));
 
         smallValueTilePositions.push(randomPosition)
-    } 
+    }
     freeTilesAfterSmall = await freeTilesAfterSmall.filter(item => !smallValueTilePositions.includes(item.position));
     return freeTilesAfterSmall
 }
 
 async function setOtherTileValues(options, freeTiles) {
     let otherValues
-  if(options.smallValuesNotTouching === true){
-    otherValues = [3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
-  }else{
-    otherValues = [2, 12, 3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
-  }
+    if (options.smallValuesNotTouching === true) {
+        otherValues = [3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
+    } else {
+        otherValues = [2, 12, 3, 3, 4, 4, 5, 5, 9, 9, 10, 10, 11, 11]
+    }
     otherValues = await shuffleArray(otherValues)
 
     for (let i = 0; i < otherValues.length; i++) {
@@ -304,11 +304,11 @@ async function setOtherTileValues(options, freeTiles) {
 async function setStandardBoard(standardBoardOptions) {
     try {
         const freeTilesAfterRed = await setRedTileValues()
-        if(standardBoardOptions.smallValuesNotTouching === true){
+        if (standardBoardOptions.smallValuesNotTouching === true) {
             const freeTilesAfterSmall = await set2and12Values(freeTilesAfterRed)
-            await setOtherTileValues(standardBoardOptions ,freeTilesAfterSmall)
-        }else{
-            await setOtherTileValues(standardBoardOptions ,freeTilesAfterRed)
+            await setOtherTileValues(standardBoardOptions, freeTilesAfterSmall)
+        } else {
+            await setOtherTileValues(standardBoardOptions, freeTilesAfterRed)
         }
     } catch (error) {
         throw error;
