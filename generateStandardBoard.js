@@ -6,28 +6,28 @@ class resurceTile {
     }
 }
 
-/*Forbiden tiles*/
-let positionsForBox1 =  {position:'box1', unavailabelPositions:['box2', 'box4', 'box5']}
-let positionsForBox2 = {position:'box2', unavailabelPositions:['box1', 'box3', 'box5', 'box6']}
-let positionsForBox3 = {position:'box3', unavailabelPositions:['box2', 'box6', 'box7']}
-let positionsForBox4 = {position:'box4', unavailabelPositions:['box1', 'box5', 'box8', 'box9']}
-let positionsForBox5 = {position:'box5', unavailabelPositions:['box1', 'box2', 'box4', 'box6', 'box9', 'box10']}
-let positionsForBox6 = {position:'box6', unavailabelPositions:['box2', 'box3', 'box5', 'box7', 'box10', 'box11']}
-let positionsForBox7 = {position:'box7', unavailabelPositions:['box3', 'box6', 'box11', 'box12']}
-let positionsForBox8 = {position:'box8', unavailabelPositions:['box4', 'box9', 'box13']}
-let positionsForBox9 = {position:'box9', unavailabelPositions:['box4', 'box5', 'box8', 'box10', 'box13', 'box14']}
-let positionsForBox10 = {position:'box10', unavailabelPositions:['box5', 'box6', 'box9', 'box11', 'box14', 'box15']}
-let positionsForBox11 = {position:'box11', unavailabelPositions:['box6', 'box7', 'box10', 'box12', 'box15', 'box16']}
-let positionsForBox12 = {position:'box12', unavailabelPositions:['box7', 'box11', 'box16']}
-let positionsForBox13 = {position:'box13', unavailabelPositions:['box8', 'box9', 'box14', 'box17']}
-let positionsForBox14 = {position:'box14', unavailabelPositions:['box9', 'box10', 'box13', 'box15', 'box17', 'box18']}
-let positionsForBox15 = {position:'box15', unavailabelPositions:['box10', 'box11', 'box14', 'box16', 'box18', 'box19']}
-let positionsForBox16 = {position:'box16', unavailabelPositions:['box11', 'box12', 'box15', 'box19']}
-let positionsForBox17 = {position:'box17', unavailabelPositions:['box13', 'box14', 'box18']}
-let positionsForBox18 = {position:'box18', unavailabelPositions:['box17', 'box14', 'box15', 'box19']}
-let positionsForBox19 ={position:'box19', unavailabelPositions: ['box15', 'box16', 'box18']}
+/*unavailble tile positions*/
+let positionsForBox1 =  {position:'box1', unavailablePositions:['box2', 'box4', 'box5']}
+let positionsForBox2 = {position:'box2', unavailablePositions:['box1', 'box3', 'box5', 'box6']}
+let positionsForBox3 = {position:'box3', unavailablePositions:['box2', 'box6', 'box7']}
+let positionsForBox4 = {position:'box4', unavailablePositions:['box1', 'box5', 'box8', 'box9']}
+let positionsForBox5 = {position:'box5', unavailablePositions:['box1', 'box2', 'box4', 'box6', 'box9', 'box10']}
+let positionsForBox6 = {position:'box6', unavailablePositions:['box2', 'box3', 'box5', 'box7', 'box10', 'box11']}
+let positionsForBox7 = {position:'box7', unavailablePositions:['box3', 'box6', 'box11', 'box12']}
+let positionsForBox8 = {position:'box8', unavailablePositions:['box4', 'box9', 'box13']}
+let positionsForBox9 = {position:'box9', unavailablePositions:['box4', 'box5', 'box8', 'box10', 'box13', 'box14']}
+let positionsForBox10 = {position:'box10', unavailablePositions:['box5', 'box6', 'box9', 'box11', 'box14', 'box15']}
+let positionsForBox11 = {position:'box11', unavailablePositions:['box6', 'box7', 'box10', 'box12', 'box15', 'box16']}
+let positionsForBox12 = {position:'box12', unavailablePositions:['box7', 'box11', 'box16']}
+let positionsForBox13 = {position:'box13', unavailablePositions:['box8', 'box9', 'box14', 'box17']}
+let positionsForBox14 = {position:'box14', unavailablePositions:['box9', 'box10', 'box13', 'box15', 'box17', 'box18']}
+let positionsForBox15 = {position:'box15', unavailablePositions:['box10', 'box11', 'box14', 'box16', 'box18', 'box19']}
+let positionsForBox16 = {position:'box16', unavailablePositions:['box11', 'box12', 'box15', 'box19']}
+let positionsForBox17 = {position:'box17', unavailablePositions:['box13', 'box14', 'box18']}
+let positionsForBox18 = {position:'box18', unavailablePositions:['box17', 'box14', 'box15', 'box19']}
+let positionsForBox19 ={position:'box19', unavailablePositions: ['box15', 'box16', 'box18']}
 
-let forbidenPositions = [
+let unavailablePositionsArray = [
     positionsForBox1, positionsForBox2, positionsForBox3, positionsForBox4,
     positionsForBox5, positionsForBox6, positionsForBox7, positionsForBox8,
     positionsForBox9, positionsForBox10, positionsForBox11, positionsForBox12,
@@ -144,7 +144,7 @@ async function setDesertMiddle() {
     const desertTileBox1 = document.getElementById(`box10`)
     const desertImg1 = desertTileBox1.querySelectorAll("img");
     desertImg1[0].src = `images/desert.png`
-    desertTileValuesArray.push({ position: 'box10', type: "desert", forbidenPositions: forbidenPositions[9].unavailabelPositions });
+    desertTileValuesArray.push({ position: 'box10', type: "desert", unavailablePositions: unavailablePositionsArray[9].unavailablePositions });
     //set up array of all positions without the desert tiles
     availableTileBoxPositions = availableTileBoxPositions.filter((item) => item !== desertTileValuesArray[0].position);
     return {
@@ -165,8 +165,8 @@ async function setTiles() {
             const tileBox = document.getElementById(afterDesertTilesObject.availableTileBoxPositions[i])
             const childImages = tileBox.querySelectorAll("img");
             childImages[0].src = `images/${resurceTilesValues[i].type}.png`
-            let unavailabelPositions = forbidenPositions.find(obj => obj.position === afterDesertTilesObject.availableTileBoxPositions[i]);
-            tileValuesArray.push({ position: afterDesertTilesObject.availableTileBoxPositions[i], type: resurceTilesValues[i].type, forbidenPositions: unavailabelPositions.unavailabelPositions });
+            let unavailablePositions = unavailablePositionsArray.find(obj => obj.position === afterDesertTilesObject.availableTileBoxPositions[i]);
+            tileValuesArray.push({ position: afterDesertTilesObject.availableTileBoxPositions[i], type: resurceTilesValues[i].type, unavailablePositions: unavailablePositions.unavailablePositions });
         }
         tileValuesArray.push(afterDesertTilesObject.desertTileValuesArray[0])
         tileValuesArray.sort((a, b) => {
@@ -184,7 +184,7 @@ async function setTiles() {
             const tileBox = document.getElementById(`box${i + 1}`)
             const childImages = tileBox.querySelectorAll("img");
             childImages[0].src = `images/${resurceTilesValues[i].type}.png`
-            tileValuesArray.push({ position: `box${i + 1}`, type: resurceTilesValues[i].type, forbidenPositions: forbidenPositions[i].unavailabelPositions });
+            tileValuesArray.push({ position: `box${i + 1}`, type: resurceTilesValues[i].type, unavailablePositions: unavailablePositionsArray[i].unavailablePositions });
         }
         return tileValuesArray
     }
@@ -227,7 +227,7 @@ async function setRedTileValues() {
     let tileBox;
     let childParagraphf;
     let tile;
-    let tileforbidenPositions;
+    let tileunavailablePositions;
 
     const redValues = [6, 6, 8, 8]
     let redValueTilePositions = []
@@ -241,12 +241,12 @@ async function setRedTileValues() {
         childParagraphf = await tileBox.querySelectorAll("p");
         childParagraphf[0].textContent = redValues[i]
         childParagraphf[0].style.color = "#f30909";
-        //removing forbiden tiles
+        //removing unavailable tiles
         tile = await tileValuesArray.find(item => item.position == randomPosition);
         tile = await tileValuesArray.find(item => item.position == randomPosition);
-        tileforbidenPositions = tile.forbidenPositions
-        tileforbidenPositions.push(randomPosition)
-        tileValuesArray = await tileValuesArray.filter(item => !tileforbidenPositions.includes(item.position));
+        tileunavailablePositions = tile.unavailablePositions
+        tileunavailablePositions.push(randomPosition)
+        tileValuesArray = await tileValuesArray.filter(item => !tileunavailablePositions.includes(item.position));
         redValueTilePositions.push(randomPosition)
     } 
     freeTilesAfterRed = await freeTilesAfterRed.filter(item => !redValueTilePositions.includes(item.position));
@@ -258,7 +258,7 @@ async function set2and12Values(freeTilesAfterRed) {
     let tileBox;
     let childParagraphf;
     let tile;
-    let tileforbidenPositions;
+    let tileunavailablePositions;
 
     let otherValues = [2, 12]
     let smallValueTilePositions = []
@@ -272,11 +272,11 @@ async function set2and12Values(freeTilesAfterRed) {
         childParagraphf = await tileBox.querySelectorAll("p");
         childParagraphf[0].textContent = otherValues[i]
         childParagraphf[0].style.color = "#000000";
-        //removing forbiden tiles
+        //removing unavailable tiles
         tile = await freeTilesAfterRed.find(item => item.position == randomPosition);
-        tileforbidenPositions = tile.forbidenPositions
-        tileforbidenPositions.push(randomPosition)
-        freeTilesAfterRed = await freeTilesAfterRed.filter(item => !tileforbidenPositions.includes(item.position));
+        tileunavailablePositions = tile.unavailablePositions
+        tileunavailablePositions.push(randomPosition)
+        freeTilesAfterRed = await freeTilesAfterRed.filter(item => !tileunavailablePositions.includes(item.position));
 
         smallValueTilePositions.push(randomPosition)
     } 
